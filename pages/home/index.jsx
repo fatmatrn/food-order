@@ -1,4 +1,4 @@
- import Xxx from '../../components/x/x'
+
 import React from 'react'
  
  const Index = () => {
