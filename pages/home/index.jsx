@@ -1,4 +1,6 @@
 
+import MenuWrapper from '@/components/product/MenuWrapper'
+import About from '@/components/ui/About'
 import Campaigns from '@/components/ui/Campaigns'
 import Carousel from '@/components/ui/Carousel'
 import React from 'react'
@@ -8,6 +10,8 @@ import React from 'react'
      <div className='' >
       <Carousel/>
       <Campaigns/>
+      <MenuWrapper/>
+      <About/>
      </div>
    )
  }
