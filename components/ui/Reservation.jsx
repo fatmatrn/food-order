@@ -2,6 +2,7 @@
 import { useFormik } from "formik";
 import Input from "../form/Input";
 import Title from "./Title";
+import { reservationSchema } from "../../schema/reservation-schema";
 
 
 
@@ -19,41 +20,53 @@ const Reservation = () => {
     date:""
     },
     onSubmit,
+    validationSchema:reservationSchema,
   })
+
   const inputs = [
     {
      id:1,
      name:"fullName",
      type:"text",
      placeHolder:"Your Full Name",
-     value:formik.values.fullName
+     value:formik.values.fullName,
+     errorMessage:formik.errors.fullName,
+     touched:formik.touched.fullName,
     },
     {
      id:2,
      name:"phoneNumber",
      type:"Number",
      placeHolder:"Your Phone Number",
-     value:formik.values.phoneNumber
+     value:formik.values.phoneNumber,
+     errorMessage:formik.errors.phoneNumber,
+     touched:formik.touched.phoneNumber
     },
     {
      id:3,
      name:"email",
      type:"email",
      placeHolder:"Your Email",
-     value:formik.values.email
+     value:formik.values.email,
+     errorMessage:formik.errors.email,
+     touched:formik.touched.email
     },
     {
      id:4,
      name:"persons",
      type:"number",
      placeHolder:"How many persons?",
-     value:formik.values.persons
+     value:formik.values.persons,
+     errorMessage:formik.errors.persons,
+     touched:formik.touched.persons
     },
     {
      id:5,
      name:"date",
      type:"datetime-local",
-     value:formik.values.date
+     value:formik.values.date,
+     errorMessage:formik.errors.date,
+     touched:formik.touched.date
     },
  
  ]
@@ -64,7 +77,7 @@ const Reservation = () => {
           <form className="lg:flex-1 w-full" onSubmit={formik.handleSubmit}>
             <div className="flex flex-col gap-y-3">
               {
-                inputs.map((input)=>(<Input {...input} key={input.id} onChange={formik.handleChange}/>))
+                inputs.map((input)=>(<Input {...input} key={input.id} onChange={formik.handleChange} onBlur={formik.handleBlur}/>))
               }
             </div>
             <button className="btn-primary mt-4" type="submit">BOOK NOW</button>

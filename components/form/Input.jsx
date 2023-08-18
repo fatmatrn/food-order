@@ -1,11 +1,15 @@
 const Input = (props) => {
-const {type,placeHolder,...inputProps}=props;
+ 
+const {type,errorMessage,placeHolder,touched,...inputProps}=props;
+console.log(inputProps)
     return (
       <div className="w-full">
         <label className="relative block cursor-text w-full">
           <input
             type={type}
-            className={`h-14 w-full border border-primary outline-none px-4 peer `}
+            className={`h-14 w-full border border-primary outline-none px-4 peer 
+            ${type!=="datetime-local" && "pt-2"}
+            ${touched && errorMessage?"border-danger":"border-primary"}`}
             required
             {...inputProps}
           />
@@ -16,7 +20,11 @@ const {type,placeHolder,...inputProps}=props;
           </span>
           )
         }
+        
         </label>
+        {
+          touched && <span className="text-xs text-danger">{errorMessage}</span>
+        }
       </div>
     );
   };
