@@ -35,7 +35,7 @@ const Costumers = () => {
       ]
     };
   return (
-    <div   className='container mx-auto my-20'>
+    <div   className='container mx-auto mb-20 mt-12'>
       <Title addClass="text-[40px] text-center">What Says Our Customers</Title>
         <div className=' '>
           <Slider {...settings}>
