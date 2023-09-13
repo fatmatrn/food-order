@@ -1,7 +1,7 @@
 const Input = (props) => {
  
 const {type,errorMessage,placeHolder,touched,...inputProps}=props;
-console.log(inputProps)
+
     return (
       <div className="w-full">
         <label className="relative block cursor-text w-full">

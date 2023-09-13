@@ -2,7 +2,7 @@
 import { useFormik } from "formik";
 import Input from "../form/Input";
 import Title from "./Title";
-import { reservationSchema } from "../../schema/reservation-schema";
+import { reservationSchema } from "../../schema/reservation";
 
 
 
